@@ -6,14 +6,14 @@
 /*   By: manambina <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:13:25 by manambina         #+#    #+#             */
-/*   Updated: 2025/02/26 22:14:20 by manambina        ###   ########.fr       */
+/*   Updated: 2025/02/26 22:31:38 by manambina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	sum(int a, int b);
+int	sum(int *a, int *b);
 
-int	sous(int a, int b);
+int	sous(int *a, int *b);
 
-int	div(int a, int b);
+int	div(int *a, int *b);
 
-int	mod(int a, int b);
+int	mod(int *a, int *b);

@@ -6,7 +6,7 @@
 /*   By: manambina <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:59 by manambina         #+#    #+#             */
-/*   Updated: 2025/02/26 22:27:27 by manambina        ###   ########.fr       */
+/*   Updated: 2025/02/26 22:32:30 by manambina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	main(void)
 		scanf("%d", &choice);
 	}
 	if (choice == 1)
-		printf("%d\n", sum(a, b));
+		printf("%d\n", sum(&a, &b));
 	else if (choice == 2)
-		printf("%d\n", sous(a, b));
+		printf("%d\n", sous(&a, &b));
 	else if (choice == 3)
 	{
 		if (b == 0)
@@ -40,7 +40,7 @@ int	main(void)
 			printf("Division impossible.\n");
 			return (0);
 		}
-		printf("%d\n", div(a, b));
+		printf("%d\n", div(&a, &b));
 	}
 	else if (choice == 4)
 	{
@@ -49,7 +49,7 @@ int	main(void)
 			printf("Syntax error.\n");
 			return (0);
 		}
-		printf("%d\n", mod(a, b));
+		printf("%d\n", mod(&a, &b));
 	}
 	return (0);
 }
