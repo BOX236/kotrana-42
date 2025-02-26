@@ -8,7 +8,7 @@ HEADERS = includes
 all : $(NAME)
 
 %.o : %.c
-	$(CC) -o $@ -c $<
+	$(CC) -o $@ $(CFLAGS) -c $<
 
 $(NAME): $(OBJ)
 	$(CC) -o $@ $^
