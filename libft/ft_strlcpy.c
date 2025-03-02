@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manambina <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 13:01:37 by manambina         #+#    #+#             */
-/*   Updated: 2025/03/02 20:11:31 by manambina        ###   ########.fr       */
+/*   Created: 2025/03/02 19:43:27 by manambina         #+#    #+#             */
+/*   Updated: 2025/03/02 20:07:09 by manambina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	char	d[] = "abcdllll";
-	char	s[] = "llll";
-	int	i = 0;
-	size_t	l_s = 0;
-	l_s = ft_strlcpy(d, s, 8);
-	while (d[i])
+	size_t	len_s;
+	size_t	i;
+
+	i = 0;
+	len_s = 0;
+	while (src[len_s])
+		len_s++;
+	if (len_s == 0)
+		return (len_s);
+	while (src[i] && i < size - 1)
 	{
-		write (1, &d[i++], 1);
+		dest[i] = src[i];
+		i++;
 	}
-	printf("\n%ld\n", l_s);
-	return (0);
+	dest[i] = '\0';
+	return (len_s);
 }

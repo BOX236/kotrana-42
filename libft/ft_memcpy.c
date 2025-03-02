@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manambina <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 13:01:37 by manambina         #+#    #+#             */
-/*   Updated: 2025/03/02 20:11:31 by manambina        ###   ########.fr       */
+/*   Created: 2025/03/02 19:29:03 by manambina         #+#    #+#             */
+/*   Updated: 2025/03/02 20:15:13 by manambina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	d[] = "abcdllll";
-	char	s[] = "llll";
-	int	i = 0;
-	size_t	l_s = 0;
-	l_s = ft_strlcpy(d, s, 8);
-	while (d[i])
-	{
-		write (1, &d[i++], 1);
-	}
-	printf("\n%ld\n", l_s);
-	return (0);
+	unsigned char		*pd;
+	const unsigned char	*psrc;
+
+	pd = dest;
+	psrc = src;
+	while (n--) //equivaut tant que (n > 0) => n--;
+		*pd++ = *psrc++;
+	return (dest);
 }

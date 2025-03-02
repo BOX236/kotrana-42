@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manambina <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 13:01:37 by manambina         #+#    #+#             */
-/*   Updated: 2025/03/02 20:11:31 by manambina        ###   ########.fr       */
+/*   Created: 2025/03/02 18:42:13 by manambina         #+#    #+#             */
+/*   Updated: 2025/03/02 19:29:55 by manambina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+void	ft_bzero(void *s, size_t n)
 {
-	char	d[] = "abcdllll";
-	char	s[] = "llll";
-	int	i = 0;
-	size_t	l_s = 0;
-	l_s = ft_strlcpy(d, s, 8);
-	while (d[i])
+	unsigned char	*p;
+
+	p = s;
+	while (n > 0)
 	{
-		write (1, &d[i++], 1);
+		*p = '\0';
+		p++;
+		n--;
 	}
-	printf("\n%ld\n", l_s);
-	return (0);
 }
+
+//deuxieme methode
+/*
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, '\0', n);
+}
+*/
