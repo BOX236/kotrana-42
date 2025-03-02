@@ -3,7 +3,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OBJ = $(SRC:.c=.o)
-HEADERS = includes
+HEADERS = header.h
 
 all : $(NAME)
 
