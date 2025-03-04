@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manambina <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 13:01:37 by manambina         #+#    #+#             */
-/*   Updated: 2025/03/04 21:07:28 by manambina        ###   ########.fr       */
+/*   Created: 2025/03/04 20:29:16 by manambina         #+#    #+#             */
+/*   Updated: 2025/03/04 21:01:29 by manambina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include "libft.h"
 
-int	main(void)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	d[] = "Coucou, Coucou, 123123";
-	ft_memmove(d+16, d, 6);
-	printf("%s\n",d);
-	return (0);
+	size_t			i;
+	unsigned char		*d;
+	const unsigned char	*s;
+
+	i = 0;
+	d = dest;
+	s = src;
+	if (d == s || s == 0)
+		return (dest);
+	else if (d < s)
+	{
+		while (n--)
+			*d++ = *s++;
+	}
+	else
+	{
+		i = n;
+		while (i > 0)
+		{
+			d[i - 1] = s[i - 1];
+			i--;
+		}
+	}
+	return (dest);
 }
